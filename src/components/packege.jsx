@@ -3,7 +3,7 @@
 import React from 'react';
 
 const cards = [
-  { number: 1, type: 'Heart', img: 'heart_image_url_1' },
+  { number: 1, type: 'Heart', img: process.env.PUBLIC_URL+'/C:/Users/user/Desktop/mini_bridge/mini-bridge/src/card_images/1.svg' },
   { number: 2, type: 'Heart', img: 'heart_image_url_2' },
   { number: 3, type: 'Heart', img: 'heart_image_url_3' },
   { number: 4, type: 'Heart', img: 'heart_image_url_4' },
@@ -57,7 +57,7 @@ const cards = [
   { number: 10, type: 'Club', img: 'club_image_url_10' },
   { number: 11, type: 'Club', img: 'club_image_url_11' },
   { number: 12, type: 'Club', img: 'club_image_url_12' },
-  { number: 13, type: 'Club', img: 'club_image_url_13' },
+  { number: 13, type: 'Club', img: '' },
 ];
 
 // Your React component that uses the cards array
