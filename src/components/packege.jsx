@@ -1,79 +1,22 @@
+import React from "react";
 
+const api_url = 'https://raw.githubusercontent.com/ahronSteinbruch/mini-bridge/main/src/card_images/';
 
-import React from 'react';
+const cards = Array.from({ length: 52 }, (_, index) => {
+  const typeIndex = Math.floor(index / 13);
+  const type = ['Heart', 'Diamond', 'Club', 'Spade'][typeIndex];
+  const number = (index % 13) + 1;
 
-const cards = [
-  { number: 1, type: 'Heart', img: process.env.PUBLIC_URL+'/C:/Users/user/Desktop/mini_bridge/mini-bridge/src/card_images/1.svg' },
-  { number: 2, type: 'Heart', img: 'heart_image_url_2' },
-  { number: 3, type: 'Heart', img: 'heart_image_url_3' },
-  { number: 4, type: 'Heart', img: 'heart_image_url_4' },
-  { number: 5, type: 'Heart', img: 'heart_image_url_5' },
-  { number: 6, type: 'Heart', img: 'heart_image_url_6' },
-  { number: 7, type: 'Heart', img: 'heart_image_url_7' },
-  { number: 8, type: 'Heart', img: 'heart_image_url_8' },
-  { number: 9, type: 'Heart', img: 'heart_image_url_9' },
-  { number: 10, type: 'Heart', img: 'heart_image_url_10' },
-  { number: 11, type: 'Heart', img: 'heart_image_url_11' },
-  { number: 12, type: 'Heart', img: 'heart_image_url_12' },
-  { number: 13, type: 'Heart', img: 'heart_image_url_13' },
-
-  { number: 1, type: 'Diamond', img: 'diamond_image_url_1' },
-  { number: 2, type: 'Diamond', img: 'diamond_image_url_2' },
-  { number: 3, type: 'Diamond', img: 'diamond_image_url_3' },
-  { number: 4, type: 'Diamond', img: 'diamond_image_url_4' },
-  { number: 5, type: 'Diamond', img: 'diamond_image_url_5' },
-  { number: 6, type: 'Diamond', img: 'diamond_image_url_6' },
-  { number: 7, type: 'Diamond', img: 'diamond_image_url_7' },
-  { number: 8, type: 'Diamond', img: 'diamond_image_url_8' },
-  { number: 9, type: 'Diamond', img: 'diamond_image_url_9' },
-  { number: 10, type: 'Diamond', img: 'diamond_image_url_10' },
-  { number: 11, type: 'Diamond', img: 'diamond_image_url_11' },
-  { number: 12, type: 'Diamond', img: 'diamond_image_url_12' },
-  { number: 13, type: 'Diamond', img: 'diamond_image_url_13' },
-
-  { number: 1, type: 'Spade', img: 'spade_image_url_1' },
-  { number: 2, type: 'Spade', img: 'spade_image_url_2' },
-  { number: 3, type: 'Spade', img: 'spade_image_url_3' },
-  { number: 4, type: 'Spade', img: 'spade_image_url_4' },
-  { number: 5, type: 'Spade', img: 'spade_image_url_5' },
-  { number: 6, type: 'Spade', img: 'spade_image_url_6' },
-  { number: 7, type: 'Spade', img: 'spade_image_url_7' },
-  { number: 8, type: 'Spade', img: 'spade_image_url_8' },
-  { number: 9, type: 'Spade', img: 'spade_image_url_9' },
-  { number: 10, type: 'Spade', img: 'spade_image_url_10' },
-  { number: 11, type: 'Spade', img: 'spade_image_url_11' },
-  { number: 12, type: 'Spade', img: 'spade_image_url_12' },
-  { number: 13, type: 'Spade', img: 'spade_image_url_13' },
-
-  { number: 1, type: 'Club', img: 'club_image_url_1' },
-  { number: 2, type: 'Club', img: 'club_image_url_2' },
-  { number: 3, type: 'Club', img: 'club_image_url_3' },
-  { number: 4, type: 'Club', img: 'club_image_url_4' },
-  { number: 5, type: 'Club', img: 'club_image_url_5' },
-  { number: 6, type: 'Club', img: 'club_image_url_6' },
-  { number: 7, type: 'Club', img: 'club_image_url_7' },
-  { number: 8, type: 'Club', img: 'club_image_url_8' },
-  { number: 9, type: 'Club', img: 'club_image_url_9' },
-  { number: 10, type: 'Club', img: 'club_image_url_10' },
-  { number: 11, type: 'Club', img: 'club_image_url_11' },
-  { number: 12, type: 'Club', img: 'club_image_url_12' },
-  { number: 13, type: 'Club', img: '' },
-];
+  return {
+    number,
+    img: `${api_url}${index + 1}.svg`,
+    type,
+  };
+});
 
 // Your React component that uses the cards array
 const CardComponent = () => {
-  return (
-    <div>
-      {cards.map((card, index) => (
-        <div key={index}>
-          <p>Number: {card.number}</p>
-          <p>Type: {card.type}</p>
-          <img src={card.img} alt={`Card ${card.number}`} />
-          <hr />
-        </div>
-      ))}
-    </div>
-  );
+  return cards;
 };
 
 export default CardComponent;

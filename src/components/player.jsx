@@ -2,6 +2,8 @@
 
 
 function Player() {
+    pleyer_name ;
+    id;
     cards = [];
     score = 0;
     turn = false;
