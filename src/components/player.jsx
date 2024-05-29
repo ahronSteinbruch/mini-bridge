@@ -5,17 +5,13 @@ function Player() {
     pleyer_name ;
     id;
     cards = [];
-    score = 0;
-    turn = false;
-    const peak_card = ()=>{
-        
-    }
+    score = 0; 
+    turn = false; 
     
-
-    return (
-      <>
-        
-      </>
+    return ( 
+      <div>
+        {pleyer_name}
+      </div>
     )
   }
   
